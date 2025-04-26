@@ -16,6 +16,7 @@ use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\SystemSettingController;
 use App\Http\Controllers\Api\ExpenseCategoryController;
 use App\Http\Controllers\Api\OrderController;
+use App\Http\Controllers\Api\UnitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +41,8 @@ Route::middleware('auth:sanctum')->group(function(){
 
     //System Setting Route
     Route::apiResource('/system-setting', SystemSettingController::class)->only(['index', 'update']);
+
+    //Unit Route
+    Route::get('/allUnits', [UnitController::class, 'allUnits']);
+    Route::apiResource('/units', UnitController::class);
 });

@@ -7,6 +7,8 @@ use App\Repositories\SystemSetting\SystemSettingInterface;
 use App\Repositories\SystemSetting\SystemSettingRepository;
 use App\Repositories\ExpenseCategory\ExpenseCategoryInterface;
 use App\Repositories\ExpenseCategory\ExpenseCategoryRepository;
+use App\Repositories\Unit\UnitInterface;
+use App\Repositories\Unit\UnitRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -18,6 +20,10 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             SystemSettingInterface::class,
             SystemSettingRepository::class
+        );
+        $this->app->bind(
+            UnitInterface::class,
+            UnitRepository::class
         );
     }
 
